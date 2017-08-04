@@ -7,6 +7,6 @@ A concept idea that will give home owners the opportunity to rent out there driv
 
 
 
-![Splash](/1.png?raw=true “Home Page”)
+![Home Page](/1.png?raw=true “Home Page”)
 
-![Main](/2.png?raw=true “User Sigh Up”)
+![User Sigh Up](/2.png?raw=true “User Sigh Up”)
