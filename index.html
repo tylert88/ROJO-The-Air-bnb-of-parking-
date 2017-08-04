@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ROJO</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<!-- WEB NAVIGATION -->
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="./index.html" class="brand-logo teal-text ">ROJO</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./map.html">Map</a></li>
+        <li><a href="./userAccount.html" >Create Account</a></li>
+      </ul>
+<!-- MOBILE NAVIGATION -->
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./map.html">Map</a></li>
+        <li><a href="./userAccount.html">Create Account</a></li>
+      </ul>
+      <a href="" data-activates="nav-mobile" class= " button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+<!-- TOP ELEMENT -->
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2"></h1>
+        <div class="row center">
+          <h2 class="header center col s12 light">Driveway. Parking Spot. You Decide.</h2>
+        </div>
+
+<!-- GET STARTED BUTTON -->
+        <div class="row center">
+          <a href="./userAccount.html" id="download-button" class=" btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+        </div>
+        <br><br>
+      </div>
+
+<!-- TOP ELEMENT IMAGE -->
+    </div>
+    <div class="parallax"><img src="top.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div id="mid_container" class="container">
+    <div class="section">
+
+      <!--  ICON SECTION   -->
+      <!--  COLUMN 1   -->
+      <div class="section row">
+        <div  class="col s12 m4">
+          <div id="first_col" class=" icon-block" >
+            <h2 class="center teal-text"><i class=" material-icons">thumb_up</i></h2>
+            <h5 class="center">What Is ROJO</h5>
+            <p  class="light">ROJO (short for phrase "Front Row Joe") is a technology company that connects owners of private parking spots to people looking for parking. In urban areas where parking demand is high but available options are scarce or expensive, ROJO makes additional supply available to the driving public by listing exclusive inventory owned by local residents and businesses.</p>
+          </div>
+        </div>
+
+        <!--  COLUMN 2   -->
+        <div class="col s12 m4">
+          <div id="second_col" class="icon-block">
+            <h2 class="center teal-text"><i class="material-icons">monetization_on</i></h2>
+            <h5 class="center">Why Use ROJO</h5>
+            <p class="light">Using ROJO, parking owners are able to make some supplemental income from an underutilized asset while renters get access to exclusive inventory in more convenient and hard-to-park locations. The ROJO support team ensures that the entire process of listing, reserving, parking, and paying is as smooth as possible for all involved.</p>
+          </div>
+        </div>
+
+        <!--  COLUMN 3   -->
+        <div class="col s12 m4">
+          <div id="third_col" class="icon-block">
+            <h2 class="center teal-text"><i class="material-icons">local_parking</i></h2>
+            <h5 class="center">ROJO's Vision</h5>
+            <p class="light">ROJO believes that when communities come together there is no challenge big enough – including solving urban parking. ROJO is unique as it helps solve urban parking by not only adding parking supply for the public to use, but also helping communities to earn some additional income. It’s a win-win-win scenario – for drivers, parking owners, and the community as a whole.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<!--  BOTTOM ELEMENT   -->
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h3 class="header center col s12 light">See open ROJO spots in your area</h3>
+
+          <!--  PULSATING ARROW BUTTON   -->
+          <a href="./map.html" class="btn btn-floating white pulse"><i class="material-icons teal-text ">location_on</i></a>
+        </div>
+      </div>
+      <!--  BOTTOM ELEMENT IMAGE   -->
+    </div>
+    <div class="parallax"><img src="middle.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <!--  FOOTER   -->
+    <footer>
+        <div class=" teal-text light italic container">
+          <p>Copyright 2017 ROJO Inc. All rights reserved</p>
+        </div>
+    </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  <script src="node_modules/auth0-js/build/auth0.js"></script>
+  <script src="auth0-variables.js"></script>
+  <script src="app.js"></script>
+  </body>
+</html>

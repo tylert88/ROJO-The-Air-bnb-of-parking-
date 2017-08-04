@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ROJO</title>
+
+
+  <link rel="stylesheet" type="text/css" href="./css/mapStyles.css" />
+
+<!-- MATERIALIZE CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+<!-- WEB NAVIGATION -->
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="./index.html" class="brand-logo teal-text">ROJO</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./map.html">Map</a></li>
+        <li><a href="./userAccount.html">Create Account</a></li>
+      </ul>
+
+<!-- MOBILE NAVIGATION -->
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="./map.html">Map</a></li>
+        <li><a href="./userAccount.html">Create Account</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+<!-- TOP BANNER TEXT -->
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2"></h1>
+        <div class="row center">
+          <h2 class="header center col s12 light">Find open spots in your area.</h2>
+        </div>
+
+        <div class="row center">
+              <a href="#!" class="btn btn-floating white pulse"><i onclick="Materialize.fadeInImage('#map')" class="material-icons teal-text ">location_on</i></a>
+        </div>
+      </div>
+
+<!-- MAIN IMAGE -->
+    </div>
+    <div class="parallax"><img src="maps_parking.png" alt="Unsplashed background img 1"></div>
+  </div>
+
+<!-- SPACE ABOVE MAP ELEMENT -->
+  <div class="container">
+    <div class="section">
+<!--   EMPTY SPACE    -->
+
+
+<!-- MAP ELEMENT -->
+  <div class="parallax-container ">
+    <div id="map"></div>
+  </div>
+  </div>
+  </div>
+
+  <!--  FOOTER   -->
+    <footer>
+        <div class=" teal-text light italic container">
+          <p>Copyright 2017 ROJO Inc. All rights reserved</p>
+        </div>
+    </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="./js/map.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqUnRbAOVuPcQCq-nhpDT1URE58QRRfU8&callback=initMap" type="text/javascript"></script>
+  </body>
+</html>

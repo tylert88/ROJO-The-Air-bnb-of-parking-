@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ROJO</title>
+
+
+  <!-- STRIPE   -->
+  <script src="https://js.stripe.com/v3/"></script>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/bankInfo.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+<!-- WEB NAVIGATION -->
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="./index.html" class="brand-logo teal-text">ROJO</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./map.html">Map</a></li>
+        <li><a href="./userAccount.html">Create Account</a></li>
+      </ul>
+
+<!-- MOBILE NAVIGATION -->
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./map.html">Map</a></li>
+        <li><a href="./userAccount.html">Create Account</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+<!-- TOP ELEMENT -->
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container ">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2"></h1>
+        <div class="row center">
+          <h2 class="header center col s12 light">Sign Up</h2>
+        </div>
+        <br><br>
+      </div>
+
+<!-- TOP ELEMENT IMAGE -->
+    </div>
+    <div class="parallax"><img src="top.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+  <br>
+  <br>
+
+<!-- INPUT FORM DROPDOWN ELEMENT -->
+  <div id="mid_container" class="container">
+    <div class="section">
+
+      <ul class="collapsible" data-collapsible="accordion">
+   <li>
+     <div  class="active collapsible-header"><i class="material-icons">face</i>Personal Information</div>
+     <div  class="collapsible-body">
+       <span>
+
+        <!-- PERSONAL INFO FORM -->
+         <form class="col s12">
+       <!-- FIRST NAME -->
+     <div class="row">
+       <div class="input-field col s6">
+         <input required autofocus id="first_name" type="text" class="validate teal-text">
+         <label for="first_name">First Name</label>
+       </div>
+
+       <!-- LAST NAME -->
+       <div class="input-field col s6">
+         <input required id="last_name" type="text" class="validate teal-text">
+         <label for="last_name">Last Name</label>
+       </div>
+     </div>
+
+     <!-- STREET ADDRESS -->
+     <div class="row">
+       <div class="input-field col s4">
+         <input required id="address" type="text" class="validate teal-text">
+         <label for="Address">Street Address</label>
+       </div>
+
+       <!-- CITY -->
+       <div class="input-field col s3">
+         <input required id="city" type="text" class="validate teal-text">
+         <label for="City">City</label>
+       </div>
+
+       <!-- STATE -->
+       <div class="input-field col s2">
+         <input required id="state" type="text" class="validate teal-text">
+         <label for="State">State</label>
+       </div>
+
+       <!-- ZIPCODE -->
+       <div class="input-field col s3">
+         <input required id="zipcode" type="text" class="validate teal-text">
+         <label for="State">Zipcode</label>
+       </div>
+     </div>
+   </form>
+   </span>
+
+   <!-- MEMBER TYPE DROPDOWN -->
+ </div>
+   </li>
+   <li>
+     <div class="collapsible-header"><i class="material-icons">person_pin_circle</i>Member Type</div>
+     <div class="collapsible-body">
+       <span>
+         <!-- MEMBER TYPE CHECKBOX  -->
+         <div class="row">
+         <p>
+         <input type="checkbox" id="checkbox-1" />
+         <label id="checkbox1" class="" for="checkbox-1">I want to use ROJO to rent out my driveway</label>
+       </p>
+         <p>
+         <input type="checkbox" id="checkbox-2" />
+         <label id="checkbox2" for="checkbox-2">I want to park in a ROJO driveway</label>
+       </p>
+         <p>
+         <input type="checkbox" id="checkbox-3" />
+         <label id="checkbox3" for="checkbox-3">I want to use ROJO to do both</label>
+       </p>
+       </div>
+     </span>
+
+     <!-- PAYMENT DROPDOWN -->
+   </div>
+   </li>
+   <li>
+     <div class="collapsible-header"><i class="material-icons">local_atm</i>Financial</div>
+     <div class="collapsible-body">
+       <span>
+
+        <!-- PAYMENT FORM -->
+      <form  id="payment-form">
+        <div class="form-row">
+        <label for="card-element">
+              Credit or debit card
+          </label>
+        <div id="card-element"><!-- Stripe Element will be inserted here. --></div>
+
+   <!-- Used to display form errors -->
+    <div id="card-errors" role="alert"></div>
+    </div>
+
+<!-- SAVE BUTTON -->
+
+      <input id="save-card" type="button" name="" value="save">
+
+       </form>
+      </span>
+     </div>
+      </li>
+    </ul>
+
+
+
+    <!-- TERMS AND CONDITIONS CHECKBOX-->
+      <div class="section row">
+    <form class="col s12">
+      <form>
+        <p>
+        <input type="checkbox" id="test5" />
+        <label for="test5">I agree to the <a class="modal-trigger" href="#modal1">terms and conditions</a>.</label>
+
+        <a onclick="store()" type="button" id="submit-btn" class="btn disabled">Submit</a>
+      </p>
+
+    <!-- MODAL STRUCTURE FOR TERMS AND CONDITIONS-->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Terms and Conditions</h4>
+      <p> <i>Please read these terms carefully. This is a binding agreement between ROJO, LLC (referred to as “ROJO,” we,” “us” or “our”) and any person who has indicated their assent hereto by clicking “I agree” or similarly expressing acceptance. Any persons who access or establish a connection to the Services will also be deemed to have accepted the terms of this agreement.</i>
+        <br>
+        <br>
+        <br>
+        <b>1. ACCESS TO THIS SITE</b>
+        To access any part of this website, http://www.ROJO.com (the “Website”), the ROJO mobile application (the “Application”) or other software, resources or services made available by ROJO (all of the foregoing, the “Services”), you are asked to provide registration information. It is a condition of your use of the Services that all the information you provide is correct, current, and complete. ROJO may terminate or suspend your access to the Services, if ROJO believes the information you provide is inaccurate.
+
+        You agree that ROJO may, without prior notice for any reason or no reason, immediately terminate your account and access to the Services. You agree that all terminations for cause will be made in ROJO’s discretion and that ROJO will not be liable to you or any third-party for any termination of your account.
+        <br>
+        <b>2.  HOW THE SERVICES WORK</b>
+        The core of the Services is an online marketplace where registered members (“Members”) who own parking spots (“Owners” and “Parking Spots,” respectively) to list those Parking Spots (each, a “Listing”) and make them available for rent to Members who wish to use them (“Renters”). Anyone may view Listings as an unregistered user of the Services, however, only Members may list or make reservations of Parking Spots.
+
+        ROJO is not an owner of Parking Spots or a representative of owners of Parking Spots. ROJO does not rent, manage or control Parking Spots. ROJO’s responsibilities are limited to: (1) facilitating the availability of the Services, and (2) serving as the limited payment collection agent of Owners for the purpose of accepting payments from Renters.
+
+        ACCORDINGLY, ROJO IS NOT RESPONSIBILE FOR AND DISCLAIMS ANY LIABILITY RELATED TO LISTINGS, RESERVATIONS, PARKING SPOTS, AND THE TRANSACTIONS BETWEEN OWNERS AND RENTERS DESCRIBED HEREIN.
+        <br>
+        <b>3. RESERVATIONS</b>
+        Owners are solely responsible for honoring any reservations and making available any Parking Spots reserved through the Services. If you, as a Renter, choose to enter into a transaction with an Owner for the reservation of a Parking Spot, you understand and agree that you will be required to enter into an agreement with the Owner and you must honor any terms, conditions, rules and restrictions associated with such Parking that you have accepted. Once a reservation is confirmed, ROJO will send both Owner and Renter a confirmation email summarizing the transaction.
+        <br>
+        <b>4. FEES</b>
+        In consideration of providing the Services, ROJO charges service fees to both Owners and Renters (“Owner Service Fees” and “Renter Service Fees,” respectively, and together, the “Services Fees”). Renters are also responsible for paying the fees set by Owners for Parking Spots (the “Parking Fees”). Parking Fees and Renter Service Fees are collectively referred to herein as the “Total Renter Fees.” Where applicable, taxes may also be charged. You as a Renter agree to pay ROJO the Total Renter Fees for any reservation requested through your ROJO Account. ROJO deducts the Owner Service Fees from the Parking Fees before remitting the balance to the Owner.
+
+        ROJO will collect the Total Renter Fees at the time the reservation is made by the Renter and will pay the Parking Fees (less the Owner Service Fees and any taxes ROJO is required to withhold) to the Owner on a monthly basis. The time it takes for the Owner to receive payouts may depend upon the method that the Owner choose for receiving payouts. Some methods involve the use of third-party payment processors, who may impose their own additional charges for the use of their services directly on the Owner.
+
+        Each Owner hereby appoints ROJO as the Owner’s limited payment collection agent solely for the purpose of accepting the Parking Fees from Renters. In accepting this appointment, ROJO assumes no liability for any acts or omissions of the Owner.
+
+        If you are directed to ROJO’s third-party payment processor, you may be subject to terms and conditions governing use of that third party’s service and that third party’s personal information collection practices. Please review these third-party terms and conditions and privacy policies before using the services.
+
+        Credits and Promo Codes. You may receive credits (“ROJO Credits”) that you can apply toward payment upon booking of a parking space. ROJO Credits are only valid for use on the ROJO Platform, and are not transferable or redeemable for cash except as required by law. ROJO Credits cannot be combined, and if the cost of parking exceeds the applicable credit or discount value we will charge your payment method on file for the outstanding cost. Additional restrictions on ROJO Credits may apply as communicated to you in a relevant promotion.
+        <br>
+        <b>5. CANCELLATIONS AND REFUNDS</b>
+        As a Renter, you may cancel your reservation for a Parking Spot only in accordance with the cancellation policy of the Owner contained in the original Listing, or with the permission of the Owner, and ROJO will refund any amounts charged to your credit card in connection with the canceled reservation within a reasonable time. However, regardless of the cancellation policy set by the Owner, the Renter Service Fee is non-refundable. ROJO will, however, refund the Owner Service Fee.
+
+        As an Owner, you may cancel a reservation for a Parking Spot up to 24 hours before the scheduled start time of the reservation (“Owner Cancellation Period”). If as an Owner you cancel a reservation request within the Owner Cancellation Period, any amounts collected by ROJO for the requested reservation will be refunded to the Renter’s credit card. The Owner Service Fee is non-refundable. ROJO will, however, refund the Renter Service Fee.
+
+        ROJO may apply penalties to or impose consequences for Owner cancellations, including (1) publishing an automated review on your Listing indicating that a reservation was cancelled, (2) keeping the calendar for your Listing unavailable or blocked for the dates of the cancelled reservation, or (3) imposing a cancellation fee up to $50 (which may be withheld from your future payouts). You will be notified of the situations in which a cancellation fee applies before you decide to cancel.
+
+        In certain exceptional circumstances, ROJO may decide that it is necessary or desirable to cancel a confirmed reservation, in which case ROJO may also determine, in its sole discretion, to refund to the Renter all or part of the Parking Fee. You agree that ROJO and the relevant Renter or Owner will not have any liability for such cancellations or refunds.
+        <br>
+        <b>6. TAXES</b>
+        Depending on the amount of Parking Fees you earn through the Services, tax regulations may require us to collect appropriate tax information from you as Owner, or to withhold taxes from payouts to you, or both. If we request information from you for this purpose, you agree to provide it promptly and to keep it current, complete and accurate. If you as Owner fail to provide us with information or documentation that we determine to be necessary to meet our obligations to withhold taxes, we may suspend payouts to you until we receive the information necessary to enable us to withhold the amounts required by law.
+
+        You as Owner understand and agree that you are solely responsible for determining (1) your applicable tax reporting requirements, and (2) the taxes that should be charged at the time of reservation. You are also solely responsible for remitting to the relevant authority any taxes received by you. ROJO cannot and does not offer tax-related advice to any Members.
+        <br>
+        <b>7. DAMAGE TO PROPERTY</b>
+        You as Renter are responsible for leaving the Parking Spot in the condition you found it in when you arrived. ROJO may in its discretion provide tools as part of the Services to enable Owners and Renters to communicate about issues that may arise relating to property damage. However, ROJO is not responsible to take any specific steps to investigate or mediate disputes. The responsibility to address and resolve any such issues lies solely with Owners and Renters.
+
+        You as a Renter understand and agree that you are parking at your own risk and the owner is not responsible for any damage to your car or the loss of personal belongings left in the car.
+        <br>
+        <b>8. TERMINATION OF ACCOUNT</b>
+        If you wish to terminate your account, you may do so by contacting us at http://www.ROJO.com/contact or by calling Customer Service at (773) 770-5223. All provisions of these Terms of Use, which by their nature should survive termination of your account will survive, including but not limited to, ownership provisions, warranty disclaimers, indemnity and limitations of liability.
+        <br>
+        <b>9. PRIVACY</b>
+        ROJO’s Privacy Policy, located at http://www.ROJO.com/privacy-policy , describes ROJO’s collection and use of your personal and other information.
+        <br>
+        <b>10. RESTRICTIONS ON USE</b>
+        You may access the Services only for your personal, non-commercial use. You may not use the Services for any other purpose. You may not, for example, (1) modify, publish, distribute, transmit, systematically download, or use automated means to index or extract data from, participate in the transfer or sale or rental of, translate, create derivative works from, frame, co-brand, or in any way exploit any part of the Services other than for personal use or as specifically permitted in this agreement, without ROJO’s written consent, or (2) use the Services in any harmful manner or interfere with any party’s use or enjoyment of the Services. You agree to cooperate with ROJO in causing any unauthorized use of the Services to immediately cease.
+        <br>
+        <b>11. OWNERSHIP</b>
+        The material accessible from this Website, including text, data, images, interfaces and other materials or works of authorship (the “Content”) is owned or licensed by ROJO. Content may not be copied, distributed, republished, uploaded, posted, or transmitted in any way without the prior written consent of ROJO, except that you may print out limited portions of the Content solely for your personal use. You may not remove or alter, or cause to be removed or altered, any copyright, trademark, trade name, service mark, or any other proprietary notice or legend appearing on any of the Content.
+        <br>
+        <b>12. CONTENT SUBMISSIONS</b>
+        You hereby grant to ROJO the royalty-free, perpetual, irrevocable, worldwide, non-exclusive right and license to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, perform, and display, any material submitted to us (“Submissions”), including photographs, Listing text and reviews of Members. ROJO will not treat any Submission as confidential, and may use any Submission in its business (including without limitation, for products or advertising) without incurring any liability for royalties or other payments. You represent that you own or otherwise possess all of the rights in Submissions necessary to convey the rights to ROJO set forth above.
+
+        You may not post, send, submit, publish, or transmit in connection with the Services any material that (1) you do not have the right to post, including proprietary material of any third party, (2) advocates illegal activity or discusses an intent to commit an illegal act, (3) is vulgar, obscene or threatening, (4) libels, defames, or invades the privacy of other users, (5) does not pertain directly to the subject matter of the Services or advertises another product or service, or (6) contains hyperlinks to other sites.
+
+        ROJO may monitor use of the Website to determine compliance with this agreement and reject or remove Submissions for any reason. You are solely responsible for the content of your Submissions.
+        <br>
+        <b>13. HYPERLINKS</b>
+        The Website may include hyperlinks to other websites that are not owned or operated by ROJO. These links are provided for your convenience, and ROJO may receive commissions or other financial compensation from the owners of these websites. Hyperlinks are to be accessed at your own risk.  ROJO has no control over other websites and is not liable for any content, advertising, products, services or other materials on or available from those websites. Nonetheless, we wish to protect the users of the Website, and we therefore invite feedback about websites that are linked from this Website.
+        <br>
+        <b>14. SECURITY AND SECURITY VIOLATIONS</b>
+        Passwords used to access the Services are for individual use only. You are responsible for the security of your own password and for all activities that occur through the use of your account if accessed with your password, including liability for damages resulting from misuse. If you use a password that ROJO considers insecure, ROJO may require you to change the password or otherwise terminate your account.
+
+        You may not attempt to violate the security of the Services, or use the Services to violate the security of other persons or websites or to violate the law, including by: (1) accessing data not intended for you or logging into an account that you are not authorized to access, (2) attempting to probe, scan or test the vulnerability of the Services or to breach security or authentication measures, (3) attempting to interfere with service to any user, host or network, including without limitation, by submitting a virus to the Services,  (4) sending unsolicited e-mail,  (5) forging any TCP/IP packet header or any part of the header information in any e-mail, or (6) attempting reverse engineer any of the software making up any part of the Services.
+
+        ROJO will take all reasonably necessary steps to investigate suspected violations of this agreement. ROJO reserves the right to involve and fully cooperate with any law enforcement authorities and comply with court orders requesting or directing ROJO to disclose the identity of anyone engaging in conduct that is believed to violate the law. ROJO further reserves the right, in its discretion, to release your details to system administrators at other sites in order to assist them in resolving security incidents.
+
+        You hereby release and hold ROJO harmless from and against any claims by you relating to any action taken by ROJO during or as a result of its investigations and any actions taken as a consequence of investigations by either ROJO or law enforcement authorities.
+        <br>
+
+        <b>15. IMPORTANT WARRANTY DISCLAIMERS</b>
+        Your use of the Services is at your own risk. The Services are provided on an “as is” and “as available” basis. ROJO disclaims any warranties, express or implied, including any implied warranties of merchantability, fitness for a particular purpose, title, or non-infringement, and any warranties arising out of course of dealing or usage of trade.
+
+        ROJO makes no warranty that the Services will meet your requirements or be available on an uninterrupted, secure, or error-free basis.
+
+        ROJO makes no warranty regarding the quality or safety of Parking Spots or the accuracy, timeliness, truthfulness, completeness or reliability of any content displayed within the Services, including Listings.
+
+        ROJO does not complete background checks on Members. Your interactions with such persons are at your own risk. You are advised to conduct yourself with a level of caution appropriate for dealings with persons not personally known to you.
+
+        The inclusion or offering for sale of any product or service as part of the Services does not constitute an endorsement or recommendation by ROJO, and you agree not to make any claim against the ROJO relating to the purchase of these products or services.
+        <br>
+        <b>16. LIMITATIONS ON LIABILITY</b>
+        In no event will the collective liability of ROJO and its officers, directors, employees, subsidiaries, licensors, vendors and other related parties (together, the “ROJO Parties”), regardless of the legal theory under which liability is asserted, exceed the greater of $500 or the amount that you have paid to ROJO for the Services during the most recent 12-month period.
+
+        The ROJO Parties are not liable for any incidental, indirect, punitive, actual, consequential, special, exemplary, or other damages, including loss of revenue or income, pain and suffering, emotional distress, or similar damages, even if you have advised them of the possibility of such damages.
+        <br>
+        <b>17. INDEMNIFICATION</b>
+        To the maximum extent permitted by law, you shall defend and indemnify the ROJO Parties from and against all third-party claims, liabilities and expenses, including legal fees and costs, relating to your use of the Services or your breach of any provision contained in this agreement. ROJO reserves the right, in its sole discretion and at its own expense, to assume the exclusive defense and control of any claim for which you are obligated to provide indemnification under this section. You shall fully cooperate as reasonably required in the defense of any claim.
+        <br>
+
+        <b>18. DISPUTE RESOLUTION; WAIVER</b>
+        All disputes relating to the interpretation of this agreement or the rights of the parties hereunder will be exclusively settled by arbitration administered by the American Arbitration Association (“AAA”) under its Commercial Arbitration Rules. Disputes involving $75,000 or less shall use the AAA’s Expedited Rules. The parties shall mutually agree upon a single commercial arbitrator, and in the absence of agreement, the AAA shall select the arbitrator. The place of arbitration shall be Chicago, Illinois. The parties will share equally in the costs of arbitration payable to the AAA, including the arbitrator. The award of the arbitrator will be accompanied by a reasoned opinion. Judgment on an arbitration award may be entered in accordance with the Federal Arbitration Act in any federal court having jurisdiction.
+
+        You acknowledge and agree that you and ROJO are each waiving the right to a trial by jury or to participate as a plaintiff or class member in any purported class action or representative proceeding. Further, unless both you and ROJO otherwise agree in writing, the arbitrator may not consolidate more than one person’s claims, and may not otherwise preside over any form of any class or representative proceeding.
+
+        The parties to this agreement may, notwithstanding the above, seek equitable relief in any proper court to enjoin a breach or threatened breach of any obligations under this agreement that might cause irreparable harm (without any requirement to post bond).
+        <br>
+        <b>19. AMENDMENT</b>
+        This agreement constitutes the entire agreement between the parties relating to the subject matter contained herein. The ROJO may modify this agreement at any time by posting the revised terms on the Website and providing you with the opportunity to accept or reject the modifications during your next sign-on to the Services. If you do not agree to the modifications, ROJO may discontinue your access to the Services.
+        <br>
+
+        <b>20. MISCELLANEOUS</b>
+        This agreement is to be governed and interpreted pursuant to the laws of the State of Illinois, without regard to its choice of law rules. If any part of this agreement is unlawful, void, or unenforceable, that part will be deemed severable and will not affect the validity and enforceability of any remaining provisions. Any notices or other communications permitted or required hereunder will be in writing and given by ROJO via e-mail, to the address that you provided when registering for the Services, and will be effective upon transmission. You agree that these terms will continue to be binding upon you after termination of your use of or Membership in the Services.
+        <br>
+        <b>21. CONTACT AND FEEDBACK</b>
+        We welcome and encourage feedback, comments and suggestions for improvements to the Services (“Feedback”). You may submit Feedback by emailing us at support@ROJO.com or though filling out the feedback form on http://www.ROJO.com/contact/ or through the “Help” section of the Site. You agree that all Feedback will become the sole and exclusive property of ROJO and you hereby irrevocably assign to ROJO all of your right in and to all Feedback.</p>
+    </div>
+    <div class="modal-footer"></div>
+  </div>
+      </form>
+    </form>
+    </div>
+    </div>
+  </div>
+
+  <!--  FOOTER   -->
+    <footer>
+        <div class=" teal-text light italic container ">
+          <p>Copyright 2017 ROJO Inc. All rights reserved</p>
+        </div>
+    </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/bankInfo.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/signUp.js"></script>
+  </body>
+</html>
