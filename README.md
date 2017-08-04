@@ -9,4 +9,4 @@ A concept idea that will give home owners the opportunity to rent out there driv
 
 ![Home Page](/1.png?raw=true “Home Page”)
 
-![User Sigh Up](/2.png?raw=true “User Sigh Up”)
+![User Sign Up](/2.png?raw=true “User Sign Up”)
